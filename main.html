@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Advanced Dynamic Form Builder with Export and Import Functionality</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="user">
+            <label for="adding-input">Select input type: </label>
+            <select  id="adding-input">
+                <option value="text">Text</option>
+                <option value="email">Email</option>
+                <option value="password">Password</option>
+                <option value="dropdown">Dropdown</option>
+                <option value="checkbox">Checkbox</option>
+                <option value="radio">Radio button</option>
+            </select>
+            <button id="add-field">Add input field</button>
+            </div>
+            <div class="control-field">
+                <button id="export-file" onclick="toExportFile()">Export file</button>
+                <input type="file" id="import-file" onchange="toImportFile(event)">
+        </div>
+        <div class="input-area"></div>
+    </div>
     <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
 </body>
 </html>
