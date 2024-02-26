@@ -25,12 +25,18 @@ if(inputValue !== "dropdown"){
     newDiv.appendChild(newSelect);
     let addButton = document.createElement('button');
     addButton.textContent = 'Add options';
+    let buttonToDeleteOp = document.createElement('button');
+    buttonToDeleteOp.textContent = 'X';
+    newDiv.appendChild(buttonToDeleteOp)
     newDiv.appendChild(addButton);
     addButton.addEventListener('click', ()=>{
             let newOption = document.createElement('option');
             newOption.textContent = `option${count}`;
             newSelect.appendChild(newOption);
             count++;
+            buttonToDeleteOp.addEventListener('click', () => {
+                newOption.remove();
+            })
     })
     information.push({type: inputValue, label: `file-${inputValue}`, options: ['delete', 'add option']});
 }
@@ -68,4 +74,3 @@ reader.onload = (elem) => {
     };
     reader.readAsText(file);
 }
-
